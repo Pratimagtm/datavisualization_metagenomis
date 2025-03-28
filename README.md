@@ -1,10 +1,18 @@
-<h3>datavisualization_metagenomis </h3>
+<h3>Datavisualization Metagenomics </h3>
 
 R scripts to generate bar plots with metagenomics data.
 
-install R and R studio
+Install R and R studio
+    Install libraries: 
+        tidyverse
+        readxl
+        openxlsx
+        ggplot2
+        tidyr
+        wesanderson
+        cowplot
 
-The count data representing taaxonomic or functional output from taxonomic and functional profiling of metagenomic data is used to generate the visual comparison between samples.
+The count data representing taaxonomic and functional output from taxonomic and functional profiling of metagenomics data is used to generate the visual comparison between samples.
 
 figure1.R generates a single stacked bar plot and a legend, applicable for observations at phylum level or at class level when the number of observed categories are few. 
 
