@@ -3,6 +3,7 @@ library(readxl)
 library(openxlsx)
 library(ggplot2)
 library(tidyr)
+library(wesanderson)
 
 #Excel file includes count for a SEED functional profiling of cell envelope categories for 2 sample types
 #Can be applied to any functional groups in the same excel_path within different sheets
