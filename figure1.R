@@ -5,8 +5,7 @@ library(ggplot2)
 library(tidyr)
 library(wesanderson)
 
-excel_path <-("/home/pratima/Insync/pgautam1@umbc.edu/Google Drive/Cusick Lab/Metagenomic_analysis/Megan7_analysis/megan7_bacteria/figure123/phylum.xlsx")
-#View(excel_path)
+excel_path <-("../phylum.xlsx")
 
 sheet_data <- read.xlsx(excel_path, sheet = "phylum", colNames = TRUE)
 # Data
@@ -16,7 +15,6 @@ data <- data.frame(
   Water <- sheet_data[3]
 )
 
-#View(data)
 #change data to long format
 # Reshape the data into long format
 
@@ -38,7 +36,6 @@ data_long <- data_long %>%
   group_by(Condition) %>%
   mutate(Organisms = fct_reorder(Organisms, Percentage, .desc = FALSE))
 
-#View(data_long)
 # Create the stacked bar plot
 custom_colors <- colorRampPalette(RColorBrewer::brewer.pal(12, "Paired"))(39)
 p <- ggplot(data_long, aes(x = Condition, y = Percentage, fill = Organisms)) +
@@ -58,9 +55,5 @@ p <- ggplot(data_long, aes(x = Condition, y = Percentage, fill = Organisms)) +
     panel.grid = element_blank(),        # Remove grid lines
     axis.line = element_line(color = "black")  # Show x and y axis lines
   ) +labs(fill = "Taxa")
-#scale_color_gradientn(colours = rainbow(26))
-  #scale_fill_manual()
-  #scale_fill_discrete()
-  #scale_colour_gradient()
-#scale_fill_brewer(palette="Accent")
+
 ggsave("figure1.pdf", plot = p, width = 10, height = 8) 
