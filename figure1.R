@@ -8,20 +8,20 @@ library(wesanderson)
 excel_path <-("../phylum.xlsx")
 
 sheet_data <- read.xlsx(excel_path, sheet = "phylum", colNames = TRUE)
-# Data
+# Data with count for 2 samples
 data <- data.frame(
   Organisms <- sheet_data[1],
-  Biofilm <- sheet_data[2],
-  Water <- sheet_data[3]
+  Sample1 <- sheet_data[2],
+  Sample2 <- sheet_data[3]
 )
 
 #change data to long format
 # Reshape the data into long format
 
 data_long <- data %>%
-  gather(key = "Condition", value = "Count", Biofilm, Water)
+  gather(key = "Condition", value = "Count", Sample1, Sample2)
 
-# Calculate total counts per condition (Biofilm, Water)
+# Calculate total counts per condition (Sample1, Sample2)
 total_counts <- data_long %>%
   group_by(Condition) %>%
   summarise(Total = sum(Count))
