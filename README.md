@@ -10,4 +10,6 @@ figure1.R generates a single stacked bar plot and a legend, applicable for obser
 
 figure2.R generates a stacked bar plot and a seperate legend, applicble when you want to look at large number of categories mostly seen at a genus or phylum level.
 
-figure4.R generates a bar plot of catetgories, applicable to visualize functional profile at a certain level and to visually compare various categories within one or more systems.
+figure4.R generates a bar plot of catetgories as percentage, applicable to visualize functional profile at a certain level and to visually compare various categories within one or more systems.
+
+figure6.R generates a bar plot using observed count and not as a percentage to visualize actual differences between the two samples
